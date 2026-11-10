@@ -79,33 +79,33 @@ td input.p{width:56px;text-align:right;padding:4px 6px}
 .il small{font-size:12px}
 .sheetbox{background:#e9e9e6;border-radius:12px;padding:18px;overflow-x:auto;margin-bottom:14px}
 .sheet{background:#fff;color:#222;font-family:Arial,Helvetica,sans-serif;width:100%;min-width:560px;max-width:760px;margin:0 auto;padding:32px 0 36px;font-size:13px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.sh-bar{height:9px;background:#b6d7a8;margin:0 40px}
+.sh-bar{height:9px;background:#6B8DBB;margin:0 40px}
 .sh-in{padding:0 70px}
-.sh-co{font-size:26px;color:#134f5c;margin-top:18px}
+.sh-co{font-size:26px;color:#1B2F55;margin-top:18px}
 .sh-addr{color:#777;font-size:13px;line-height:1.7;margin-top:4px}
-.sh-h1{font-size:34px;font-weight:700;color:#274e13;margin:18px 0 8px}
+.sh-h1{font-size:34px;font-weight:700;color:#1B2F55;margin:18px 0 8px}
 .sh-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:10px 0;margin-bottom:12px}
 .sh-grid b{display:block;font-size:15px;color:#434343;margin-bottom:5px}
 .sh-grid span{color:#777;font-size:13px}
 .sh-grid .pn{font-weight:700}
 .sheet table{width:100%;border-collapse:collapse;border-top:1px solid #999;font-size:13px}
-.sheet th{position:static;background:#fff;color:#274e13;font-size:15px;font-weight:700;text-align:left;padding:8px 6px;border-bottom:1px solid #999}
+.sheet th{position:static;background:#fff;color:#1B2F55;font-size:15px;font-weight:700;text-align:left;padding:8px 6px;border-bottom:1px solid #999}
 .sheet td{padding:6px;border-bottom:0;white-space:normal;color:#111}
-.sheet tbody tr:nth-child(odd) td{background:#f3f3f3}
+.sheet tbody tr:nth-child(odd) td{background:#f1f5fb}
 .sheet th.r,.sheet td.r{text-align:right}
 .sheet .tot td{border-top:1px solid #000;font-weight:700;background:#fff!important}
 .sheet .gry{color:#777}
 .sheet .g4{display:grid;grid-template-columns:1fr 100px 110px 110px;align-items:center;padding:4px 6px}
-.sheet .gold{color:#7f6000}
+.sheet .gold{color:#4d73a8}
 .sheet .r{text-align:right}
-.sheet .desc{background:#f3f3f3;font-style:italic;font-size:12px;color:#444;padding:6px 8px;min-height:32px;white-space:pre-line}
+.sheet .desc{background:#f1f5fb;font-style:italic;font-size:12px;color:#444;padding:6px 8px;min-height:32px;white-space:pre-line}
 .sheet .due{text-align:right;margin-top:10px;padding-right:6px}
-.sheet .due .l{font-size:26px;font-weight:700;color:#bf9000}
+.sheet .due .l{font-size:26px;font-weight:700;color:#6B8DBB}
 .sheet .due .v{font-size:26px;font-weight:700;color:#000}
 .sheet .iv{font:inherit;color:#222;background:transparent;border:1px solid transparent;border-radius:4px;padding:3px 4px;width:100%}
 .sheet .iv.num{text-align:right}
-.sheet .iv:hover,.sheet .iv:focus{border-color:#b6d7a8;background:#fbfdf9;outline:0}
-.sheet textarea.iv.desc{background:#f3f3f3;font-style:italic;resize:none;overflow:hidden;display:block;font-size:12px;color:#444}
+.sheet .iv:hover,.sheet .iv:focus{border-color:#6B8DBB;background:#f7faff;outline:0}
+.sheet textarea.iv.desc{background:#f1f5fb;font-style:italic;resize:none;overflow:hidden;display:block;font-size:12px;color:#444}
 .sheet .x{border:0;background:none;color:#a33;font-size:17px;padding:0 6px;cursor:pointer}
 .sheet .nb{color:#777;font-style:italic;background:#fff!important}
 #print-root{display:none}
@@ -186,6 +186,21 @@ td{border-bottom:0}tbody tr{transition:filter .15s}tbody tr:hover{filter:brightn
 #ptab tbody tr td{border-radius:0}
 .nav{font-size:13.5px;line-height:1.25}.nav .ico{flex:none}
 .nav.on .ico{color:#fff}
+
+/* trends + invoice palette */
+:root{--c0:#1B2F55;--c1:#6B8DBB;--c2:#9dbd9a;--c3:#e8c77c}
+@media(prefers-color-scheme:dark){:root{--c0:#8fb0e0;--c1:#5d7fb0;--c2:#8fc79a;--c3:#f0c46a}}
+.chart{max-height:340px}.chart .gl{stroke-dasharray:3 5;opacity:.8}.chart .axl{font-size:12px}.chart .vl{font-size:12px;font-weight:700}
+.chart .bar{fill:var(--c1);transition:opacity .15s}.chart rect:hover{opacity:.75}
+.trtiles .kpi:first-child{background:var(--navy)}
+.trtiles .t2{background:#dfe9f7}.trtiles .t3{background:#e5f1e2}.trtiles .t4{background:#fbf0d3}
+.trtiles .t2,.trtiles .t3,.trtiles .t4{color:#1B2F55}.trtiles .kpi small{color:inherit;opacity:.7}.trtiles .kpi:first-child small{color:#b9c8e2;opacity:1}
+.sub2{display:block;font-size:12px;opacity:.7;margin-top:2px}
+.donut{width:190px;height:190px;display:block;margin:6px auto}.donut .dl{fill:var(--mut);font-size:11px}.donut .dv{fill:var(--ink);font-size:20px;font-weight:800}
+.donut .d0{stroke:var(--c0)}.donut .d1{stroke:var(--c1)}.donut .d2{stroke:var(--c2)}.donut .d3{stroke:var(--c3)}
+.dleg>div{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+.legend .sw{border-radius:50%}
+.dwrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap}.dwrap .donut{margin:0}.dwrap .dleg{flex:1;min-width:240px;max-width:420px}
 </style>
 </head>
 <body>
@@ -558,30 +573,38 @@ function axis(top,W,H,pl,pr,pt,ih){
   return s;
 }
 function barSvg(vals,name){
-  var W=760,H=230,pl=48,pr=8,pt=20,pb=26,iw=W-pl-pr,ih=H-pt-pb,mx=Math.max.apply(null,vals.map(function(v){return v||0}).concat([1])),st=niceStep(mx/4),top=Math.ceil(mx/st)*st||st;
+  var W=1000,H=290,pl=52,pr=8,pt=22,pb=28,iw=W-pl-pr,ih=H-pt-pb,mx=Math.max.apply(null,vals.map(function(v){return v||0}).concat([1])),st=niceStep(mx/4),top=Math.ceil(mx/st)*st||st;
   var s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="'+esc(name)+' by month">'+axis(top,W,H,pl,pr,pt,ih),bw=iw/12;
   vals.forEach(function(v,i){
-    var x=pl+i*bw+bw*.18,w=bw*.64;
-    if(v==null)s+='<rect x="'+x+'" y="'+(pt+ih-2)+'" width="'+w+'" height="2" class="barx"/>';
-    else{var h=Math.max(1,v/top*ih);s+='<rect x="'+x+'" y="'+(pt+ih-h)+'" width="'+w+'" height="'+h+'" rx="3" class="bar"><title>'+MON[i]+': '+fmt(v)+'</title></rect><text x="'+(x+w/2)+'" y="'+(pt+ih-h-4)+'" text-anchor="middle" class="vl">'+kfmt(v)+'</text>'}
+    var x=pl+i*bw+bw*.27,w=bw*.46;
+    if(v==null){}
+    else{var h=Math.max(1,v/top*ih);s+='<rect x="'+x+'" y="'+(pt+ih-h)+'" width="'+w+'" height="'+h+'" rx="10" class="bar"><title>'+MON[i]+': '+fmt(v)+'</title></rect><text x="'+(x+w/2)+'" y="'+(pt+ih-h-4)+'" text-anchor="middle" class="vl">'+kfmt(v)+'</text>'}
     s+='<text x="'+(pl+i*bw+bw/2)+'" y="'+(H-8)+'" text-anchor="middle" class="axl">'+MON[i]+'</text>';
   });
   return s+'</svg>';
 }
 function stackSvg(series){
-  var W=760,H=230,pl=48,pr=8,pt=20,pb=26,iw=W-pl-pr,ih=H-pt-pb,tots=MON.map(function(_,i){var any=false,t=0;series.forEach(function(s){if(s.vals[i]!=null){any=true;t+=s.vals[i]}});return any?t:null});
+  var W=1000,H=290,pl=52,pr=8,pt=22,pb=28,iw=W-pl-pr,ih=H-pt-pb,tots=MON.map(function(_,i){var any=false,t=0;series.forEach(function(s){if(s.vals[i]!=null){any=true;t+=s.vals[i]}});return any?t:null});
   var mx=Math.max.apply(null,tots.map(function(v){return v||0}).concat([1])),st=niceStep(mx/4),top=Math.ceil(mx/st)*st||st;
   var s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Costs by type, by month">'+axis(top,W,H,pl,pr,pt,ih),bw=iw/12;
   MON.forEach(function(_,i){
-    var x=pl+i*bw+bw*.18,w=bw*.64,y=pt+ih;
-    if(tots[i]==null)s+='<rect x="'+x+'" y="'+(y-2)+'" width="'+w+'" height="2" class="barx"/>';
+    var x=pl+i*bw+bw*.27,w=bw*.46,y=pt+ih;
+    if(tots[i]==null){}
     else{
-      series.forEach(function(se,si){var v=se.vals[i]||0;if(v<=0)return;var h=v/top*ih;y-=h;s+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" class="s'+si+'"><title>'+MON[i]+' · '+se.name+': '+fmt(v)+'</title></rect>'});
+      series.forEach(function(se,si){var v=se.vals[i]||0;if(v<=0)return;var h=v/top*ih;y-=h;s+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+Math.max(0,h-1.5)+'" rx="5" class="s'+si+'"><title>'+MON[i]+' · '+se.name+': '+fmt(v)+'</title></rect>'});
       s+='<text x="'+(x+w/2)+'" y="'+(y-4)+'" text-anchor="middle" class="vl">'+kfmt(tots[i])+'</text>';
     }
     s+='<text x="'+(pl+i*bw+bw/2)+'" y="'+(H-8)+'" text-anchor="middle" class="axl">'+MON[i]+'</text>';
   });
   return s+'</svg>';
+}
+function donut(ser){
+  var tot=ser.map(function(x){return sumNN(x.vals).s}),sum=tot.reduce(function(a,b){return a+b},0);
+  if(!sum)return'<div class="muted">No costs yet.</div>';
+  var R=62,C=2*Math.PI*R,off=0,svg='<svg viewBox="0 0 180 180" class="donut"><circle cx="90" cy="90" r="'+R+'" fill="none" stroke="var(--line)" stroke-width="24"/>';
+  tot.forEach(function(v,i){var L=v/sum*C;if(L>0)svg+='<circle cx="90" cy="90" r="'+R+'" fill="none" stroke-width="24" class="d'+i+'" stroke-dasharray="'+Math.max(0,L-2)+' '+(C-Math.max(0,L-2))+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 90 90)"><title>'+ser[i].name+': '+fmt(v)+'</title></circle>';off+=L});
+  svg+='<text x="90" y="86" text-anchor="middle" class="dl">Total</text><text x="90" y="106" text-anchor="middle" class="dv">'+kfmt(sum)+'</text></svg>';
+  return svg+'<div class="dleg">'+ser.map(function(x,i){return'<div><span><i class="sw s'+i+'"></i>'+x.name+'</span><b>'+fmt0(tot[i])+' <small class="muted">'+Math.round(tot[i]/sum*100)+'%</small></b></div>'}).join('')+'</div>';
 }
 function trCtl(){
   var yrs=trYears(),h='<div class="row tr-ctl"><div class="seg"><button data-tr="view:monthly" class="'+(TR.view==='monthly'?'on':'')+'">Monthly</button><button data-tr="view:prop" class="'+(TR.view==='prop'?'on':'')+'">By property</button></div>';
@@ -597,9 +620,15 @@ function renderTrends(){
   var ks=trKeys(),h=trCtl();
   if(TR.view==='monthly'){
     var vals=ks.map(function(k){return coMonth(k,TR.metric)}),sm=sumNN(vals);
+    var live=vals.map(function(v,i){return v==null?null:{v:v,i:i}}).filter(Boolean),best=live.slice().sort(function(a,b){return b.v-a.v})[0],lastv=live.length?live[live.length-1]:null,prv=live.length>1?live[live.length-2]:null;
+    h+='<div class="cards trtiles">'+
+      '<div class="kpi"><small>'+metName(TR.metric)+', year to date</small><b>'+fmt0(sm.s)+'</b></div>'+
+      '<div class="kpi t2"><small>Average per month</small><b>'+fmt0(sm.n?sm.s/sm.n:0)+'</b></div>'+
+      '<div class="kpi t3"><small>Best month</small><b>'+(best?MON[best.i]:'–')+'</b><span class="sub2">'+(best?fmt0(best.v):'')+'</span></div>'+
+      '<div class="kpi t4"><small>Latest vs previous</small><b>'+(lastv&&prv?pct(lastv.v,prv.v):'–')+'</b><span class="sub2">'+(lastv?MON[lastv.i]:'')+'</span></div></div>';
     h+='<div class="panel"><h2>'+metName(TR.metric)+' by month, '+TR.year+'</h2><div class="muted" style="margin-bottom:6px">Year to date '+fmt(sm.s)+(sm.n?' · average '+fmt(sm.s/sm.n)+' per month':'')+'</div>'+barSvg(vals,metName(TR.metric))+'</div>';
     var ser=[['cl','Cleaning'],['cc','Supplies'],['mnt','Maintenance'],['ls','Landscaping']].map(function(x){return{name:x[1],vals:ks.map(function(k){return coMonth(k,x[0])})}});
-    h+='<div class="panel"><h2>Costs by type, '+TR.year+'</h2><div class="legend">'+ser.map(function(s,i){return'<span><i class="sw s'+i+'"></i>'+s.name+'</span>'}).join('')+'</div>'+stackSvg(ser)+'</div>';
+    h+='<div class="panel"><h2>Costs by type, '+TR.year+'</h2><div class="legend">'+ser.map(function(s,i){return'<span><i class="sw s'+i+'"></i>'+s.name+'</span>'}).join('')+'</div>'+stackSvg(ser)+'</div><div class="panel"><h2>Where costs go</h2><div class="dwrap">'+donut(ser)+'</div></div>';
     var cols=MET.map(function(m){return ks.map(function(k){return coMonth(k,m[0])})}),outs=ks.map(function(k){return S.months[k]?totals(k).sent:null});
     h+='<div class="panel wrap"><h2>All months</h2><table><thead><tr><th>Month</th>'+MET.map(function(m){return'<th class="r'+(m[0]===TR.metric?' hl':'')+'">'+m[1]+'</th>'}).join('')+'<th class="r">Outstanding</th><th class="r">vs last month</th></tr></thead><tbody>';
     var mi=MET.map(function(m){return m[0]}).indexOf(TR.metric),prev=null;
