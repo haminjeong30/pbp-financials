@@ -146,19 +146,59 @@ th.hl,td.hl{background:var(--accbg)}
 button.link{border:0;background:none;padding:0;color:var(--acc);cursor:pointer;font:inherit;text-align:left}
 button.link:hover{text-decoration:underline}
 table.heat td{padding:5px 7px}
+
+/* ===== Hostline skin ===== */
+:root{--bg:#eef3fa;--card:#fff;--ink:#1B2F55;--mut:#6f7f9c;--line:#e3e9f3;--acc:#6B8DBB;--accbg:#e6eefa;--side:#fff;--ok:#1e7b3c;--okbg:#dcf3e3;--warn:#8a6200;--warnbg:#fff1cc;--navy:#1B2F55;--shadow:0 6px 22px rgba(27,47,85,.07)}
+@media(prefers-color-scheme:dark){:root{--bg:#121a2b;--card:#1a2440;--ink:#e8eefb;--mut:#9fb0cf;--line:#2a375a;--acc:#8fb0e0;--accbg:#25365c;--side:#16203a;--navy:#0f1830;--shadow:none}}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(160deg,var(--bg),#dfe8f6 140%);background-attachment:fixed}
+aside{margin:14px 0 14px 14px;height:calc(100vh - 28px);border:0;border-radius:24px;box-shadow:var(--shadow)}
+.brand{font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px;padding:4px 8px 18px}
+.brand:before{content:"P";display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--acc);color:#fff;font-weight:800}
+.nav{border-radius:14px;padding:10px 12px;transition:all .18s}
+.nav .ico{width:22px;text-align:center;font-size:16px}
+.nav:hover{transform:translateX(3px)}
+.nav.on{background:var(--navy);color:#fff}
+button,.btn{border-radius:99px;transition:transform .15s,box-shadow .15s,border-color .15s}
+button:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(27,47,85,.12)}
+button.pri,#btn-newm{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+button.sm{border-radius:99px}
+select,input{border-radius:12px}
+h1{font-size:28px;font-weight:800}
+.panel,.kpi{border:0;border-radius:22px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.kpi{padding:18px 20px}.kpi:hover,.panel:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(27,47,85,.12)}
+.panel.wrap:hover{transform:none}
+.kpi b{font-size:28px;font-weight:800;display:block}
+.kpi:first-child{background:var(--navy);color:#fff}.kpi:first-child small{color:#b9c8e2}
+.cards{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.alert,.good{border-radius:16px}
+th{background:var(--card)}
+tbody tr td:first-child{border-radius:12px 0 0 12px}tbody tr td:last-child{border-radius:0 12px 12px 0}
+td{border-bottom:0}tbody tr{transition:filter .15s}tbody tr:hover{filter:brightness(.97)}
+.sheetbox{border-radius:22px}
+.seg{border-radius:99px}.seg button.on{background:var(--navy)}
+.bars div{background:#c5d4ea;border-radius:10px 10px 4px 4px;transition:height .5s}.bars div.cur{background:var(--acc)}
+.chart .bar{fill:var(--acc)}
+.fade{animation:up .45s both}@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.conf{position:fixed;top:-12px;width:9px;height:14px;z-index:99;pointer-events:none;animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.8}}
+@media(max-width:820px){aside{margin:0;height:auto;border-radius:0}}
+.bars div{max-width:56px}
+#ptab tbody tr td{border-radius:0}
+.nav{font-size:13.5px;line-height:1.25}.nav .ico{flex:none}
+.nav.on .ico{color:#fff}
 </style>
 </head>
 <body>
 <div class="app">
 <aside>
   <div class="brand">PBP Financials</div>
-  <button class="nav on" data-page="overview">Overview</button>
-  <button class="nav" data-page="import">Import bookings</button>
-  <button class="nav" data-page="costs">Supplies &amp; Maintenance</button>
-  <button class="nav" data-page="props">Properties</button>
-  <button class="nav" data-page="invoices">Invoices</button>
-  <button class="nav" data-page="cleaners">Cleaners</button>
-  <button class="nav" data-page="trends">Trends</button>
+  <button class="nav on" data-page="overview"><span class="ico">◔</span>Overview</button>
+  <button class="nav" data-page="import"><span class="ico">⇪</span>Import bookings</button>
+  <button class="nav" data-page="costs"><span class="ico">⚒</span>Supplies &amp; Maintenance</button>
+  <button class="nav" data-page="props"><span class="ico">▦</span>Properties</button>
+  <button class="nav" data-page="invoices"><span class="ico">▤</span>Invoices</button>
+  <button class="nav" data-page="cleaners"><span class="ico">☺</span>Cleaners</button>
+  <button class="nav" data-page="trends"><span class="ico">↗</span>Trends</button>
   <div class="side-foot">
     <div id="sync" class="muted" style="font-size:12px;padding:0 4px"></div>
     <button class="sm" id="btn-key" style="display:none">Sync key</button>
@@ -335,12 +375,13 @@ function cleanTotals(k){
 
 var PAGE='overview';
 var TITLES={overview:'Overview',import:'Import bookings',costs:'Supplies & Maintenance',props:'Properties',invoices:'Invoices',cleaners:'Cleaners',trends:'Trends'};
+function hello(){var h=new Date().getHours();return(h<12?'Good morning':h<18?'Good afternoon':'Good evening')+', Team Papa Behr \uD83D\uDC4B'}
 function show(p){
   PAGE=p;
   document.querySelectorAll('.page').forEach(function(e){e.classList.toggle('on',e.id==='page-'+p)});
   document.querySelectorAll('.nav').forEach(function(e){e.classList.toggle('on',e.dataset.page===p)});
-  $('title').textContent=TITLES[p];
-  $('subtitle').textContent=p==='trends'?'All months':monthName(S.cur);
+  $('title').textContent=p==='overview'?hello():TITLES[p];
+  $('subtitle').textContent=p==='trends'?'All months':p==='overview'?'Here\u2019s how '+monthName(S.cur)+' looks across your properties.':monthName(S.cur);
   if(p==='overview')renderOverview();
   if(p==='props')renderProps();
   if(p==='invoices')renderInvoices();
@@ -389,10 +430,25 @@ function renderOverview(){
      '<div class="panel"><h2>Month-end checklist <span class="muted" style="font-weight:400">'+done+' of '+CHECKS.length+'</span></h2>'+
      CHECKS.map(function(c,i){return'<label class="chk"><input type="checkbox" data-ck="'+i+'"'+(m.checks[i]?' checked':'')+'>'+esc(c)+'</label>'}).join('')+
      '<div class="muted" style="margin-top:8px">Last checked: <input type="text" id="lastchk" value="'+esc(m.checked||'')+'" placeholder="e.g. 4/23/2026" style="width:120px"></div></div></div>';
+  var ks=Object.keys(S.months).sort(),gs=ks.map(function(k){return totals(k).g}),mx=Math.max.apply(null,gs.concat([1]));
+  var bars='<div class="bars">'+ks.map(function(k,i){return'<div class="'+(k===S.cur?'cur':'')+'" title="'+monthName(k)+': '+fmt0(gs[i])+'" style="height:'+Math.max(2,gs[i]/mx*100)+'%"></div>'}).join('')+'</div><div class="lab">'+ks.map(function(k){return'<span>'+monthName(k).slice(0,3)+'</span>'}).join('')+'</div>';
+  h=h.replace('<div class="grid2">','<div class="panel"><h2>Gross revenue by month</h2>'+bars+'</div><div class="grid2">');
   $('page-overview').innerHTML=h;
+  document.querySelectorAll('#page-overview .kpi,#page-overview .panel').forEach(function(e,i){e.classList.add('fade');e.style.animationDelay=(i*40)+'ms'});
+  countUp();
   var g=$('go-imp');if(g)g.onclick=function(e){e.preventDefault();show('import')};
   document.querySelectorAll('[data-ck]').forEach(function(c){c.onchange=function(){m.checks[+c.dataset.ck]=c.checked;save();renderOverview()}});
   $('lastchk').onchange=function(){m.checked=this.value;save()};
+}
+function countUp(){
+  document.querySelectorAll('#page-overview .kpi b').forEach(function(b){
+    var v=parseFloat(b.textContent.replace(/[^0-9.\-]/g,''));if(!isFinite(v)||v===0)return;
+    var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/700),e=1-Math.pow(1-k,3);b.textContent=fmt0(v*e);if(k<1)requestAnimationFrame(f)})(t0);
+  });
+}
+function confetti(){
+  var cols=['#6B8DBB','#1B2F55','#7fd49a','#f0c46a','#fff'];
+  for(var i=0;i<60;i++){var d=document.createElement('div');d.className='conf';d.style.left=Math.random()*100+'vw';d.style.background=cols[i%5];d.style.animationDelay=Math.random()*.4+'s';d.style.animationDuration=(1.2+Math.random()*1)+'s';document.body.appendChild(d);setTimeout(function(x){x.remove()},3000,d)}
 }
 function topTable(){
   var m=M(),arr=S.props.map(function(p){var r=m.rows[p.name]||emptyRow();return{n:p.name,o:p.owner,st:r.st,inv:calc(r,p.rate).inv}});
@@ -434,7 +490,7 @@ function onCell(e){
   var tr=el.closest('tr'),i=+tr.dataset.i,p=S.props[i],r=M().rows[p.name];
   if(f==='owner')p.owner=el.value;
   else if(f==='rate')p.rate=(parseFloat(el.value)||0)/100;
-  else if(f==='st'){r.st=el.value;tr.classList.toggle('sent',el.value==='Sent');tr.classList.toggle('paid',el.value==='Paid')}
+  else if(f==='st'){r.st=el.value;tr.classList.toggle('sent',el.value==='Sent');tr.classList.toggle('paid',el.value==='Paid');if(el.value==='Paid')confetti()}
   else r[f]=parseFloat(el.value)||0;
   save();refreshRow(i);refreshTotals();
 }
